@@ -1,0 +1,72 @@
+---
+title       : Fone
+subtitle    : Formula 1 results and locations
+author      : rrunner
+job         : Developing Data Products
+framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
+highlighter : highlight.js  # {highlight.js, prettify, highlight}
+hitheme     : tomorrow      # 
+widgets     : []   # {mathjax, quiz, bootstrap}
+mode        : selfcontained # {standalone, draft}
+knit        : slidify::knit2slides
+---
+
+```{r, echo=FALSE}
+# packages
+library(slidify)
+library(knitr)
+library(ggplot2)
+library(xtable)
+
+# knitr settings
+opts_chunk$set(cache=FALSE)
+```
+
+
+## Fone
+
+- **Fone** is a simple shiny application that presents circuit location on a world map and race results in two separate tabs
+- Receives two user inputs: Year and circuit
+
+---
+
+## Source data/API
+
+> - Fone utilises the [Ergast API](http://ergast.com/mrd/)
+> - Downloads data as JSON objects 
+> - Convert to data frames before display 
+
+---
+
+## Race locations
+
+- Race locations are displayed in the first tab
+- The current selected circuit is marked red on the world map
+
+```{r, echo=FALSE, fig.width=10, fig.height=6}
+load("races.RData")
+map_theme <- theme(axis.line = element_blank(),
+                   axis.text = element_blank(),
+                   axis.ticks = element_blank(),
+                   axis.title = element_blank(),
+                   panel.grid = element_blank(),
+                   panel.background = element_rect(fill = "lightsteelblue"))
+
+m <- ggplot() + coord_cartesian(ylim=c(-60, 70), xlim=c(-150, 180)) + borders(database="world", colour="grey", fill="darkseagreen") + geom_point(data=local_data, aes(long, lat), color="black", size=2) + map_theme
+
+print(print(m + geom_point(data=local_data[1, c("long", "lat")],
+                           aes(long, lat), color="red", size=2)))
+```
+
+
+---
+
+## Race results
+
+- Results are listed in the second tab
+- For example, the podium finishers at the Melbourne 2014 race are:
+
+```{r, echo=FALSE, results='asis'}
+load("results.RData")
+print(xtable(results[1:3, ]), type="html")
+```
