@@ -8,7 +8,7 @@ highlighter : highlight.js  # {highlight.js, prettify, highlight}
 hitheme     : tomorrow      # 
 widgets     : []   # {mathjax, quiz, bootstrap}
 mode        : selfcontained # {standalone, draft}
-#knit        : slidify::knit2slides
+knit        : slidify::knit2slides
 ---
 
 
@@ -16,7 +16,7 @@ mode        : selfcontained # {standalone, draft}
 
 ## Fone
 
-- **Fone** is a simple shiny application that presents circuit location on a world map and race results in two separate tabs
+- Fone is a simple shiny application that presents circuit location on a world map and race results in two separate tabs
 - Receives two user inputs: Year and circuit
 
 ---
@@ -33,11 +33,6 @@ mode        : selfcontained # {standalone, draft}
 
 - Race locations are displayed in the first tab
 - The current selected circuit is marked red on the world map
-
-
-```
-## Use suppressPackageStartupMessages to eliminate package startup messages.
-```
 
 ![plot of chunk worldmap](assets/fig/worldmap.png) 
 
