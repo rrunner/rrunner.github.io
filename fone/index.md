@@ -16,14 +16,14 @@ knit        : slidify::knit2slides
 
 ## Fone
 
-- Fone is a simple shiny application that presents circuit location on a world map and race results in two separate tabs
+- **Fone** is a simple shiny application that presents circuit location on a world map and race results in two separate tabs
 - Receives two user inputs: Year and circuit
 
 ---
 
-## Source data/API
+## Source data and API
 
-> - Fone utilises the [Ergast API](http://ergast.com/mrd/)
+> - **Fone** utilises the [Ergast API](http://ergast.com/mrd/)
 > - Downloads data as JSON objects 
 > - Convert to data frames before display 
 
