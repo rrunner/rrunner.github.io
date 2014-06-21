@@ -8,7 +8,7 @@ highlighter : highlight.js  # {highlight.js, prettify, highlight}
 hitheme     : tomorrow      # 
 widgets     : []   # {mathjax, quiz, bootstrap}
 mode        : selfcontained # {standalone, draft}
-knit        : slidify::knit2slides
+#knit        : slidify::knit2slides
 ---
 
 
@@ -34,6 +34,11 @@ knit        : slidify::knit2slides
 - Race locations are displayed in the first tab
 - The current selected circuit is marked red on the world map
 
+
+```
+## Use suppressPackageStartupMessages to eliminate package startup messages.
+```
+
 ![plot of chunk worldmap](assets/fig/worldmap.png) 
 
 
@@ -45,7 +50,7 @@ knit        : slidify::knit2slides
 - For example, the podium finishers at the Melbourne 2014 race are:
 
 <!-- html table generated in R 3.1.0 by xtable 1.7-3 package -->
-<!-- Sat Jun 21 01:59:57 2014 -->
+<!-- Sat Jun 21 02:49:09 2014 -->
 <TABLE border=1>
 <TR> <TH>  </TH> <TH> pos </TH> <TH> no </TH> <TH> driver </TH> <TH> constructor </TH> <TH> laps </TH> <TH> grid </TH> <TH> status </TH> <TH> points </TH>  </TR>
   <TR> <TD align="right"> 1 </TD> <TD> 1 </TD> <TD> 6 </TD> <TD> Nico Rosberg </TD> <TD> Mercedes </TD> <TD> 57 </TD> <TD> 3 </TD> <TD> Finished </TD> <TD> 25 </TD> </TR>

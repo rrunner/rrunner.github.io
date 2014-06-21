@@ -1,7 +1,5 @@
 base
-datasets
-graphics
-grDevices
-methods
-stats
-utils
+ggplot2
+maps
+slidify
+xtable
