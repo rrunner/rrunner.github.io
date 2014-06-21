@@ -1,4 +1,4 @@
 init_fone.R
 
-fone/.cache/*
+#fone/.cache/*
 .Rhistory
